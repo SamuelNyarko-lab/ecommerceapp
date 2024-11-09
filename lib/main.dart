@@ -1,6 +1,6 @@
-import 'package:ecommerceapp/utils/utils.dart';
 import 'package:flutter/material.dart';
 
+import 'utils/colors.dart';
 import 'views/authentication/loginpage.dart';
 
 void main() {

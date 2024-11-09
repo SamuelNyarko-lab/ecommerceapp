@@ -1,5 +1,8 @@
 import 'package:ecommerceapp/utils/utils.dart';
+import 'package:ecommerceapp/widgets/loginView.dart';
 import 'package:flutter/material.dart';
+
+import '../../utils/colors.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,15 +13,13 @@ class LoginPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: Container(
-          height: deviceHeight(context) * 0.6,
+          height: deviceHeight(context) * 0.65,
           width: deviceWidth(context) * 0.8,
+          padding: padding(25),
           decoration: BoxDecoration(
             color: mainAppColor,
-            borderRadius: BorderRadius.circular(
-              25,
-            ),
+            borderRadius: circularBorder(50),
           ),
-          padding: padding(25),
           child: DefaultTabController(
             length: 2,
             initialIndex: 0,
@@ -46,17 +47,27 @@ class LoginPage extends StatelessWidget {
                     labelColor: mainAppColor,
                     tabs: const [
                       Tab(
-                        child: Text('LOGIN'),
+                        child: Text(
+                          'LOG IN',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                          ),
+                        ),
                       ),
                       Tab(
-                        child: Text('SIGN UP'),
+                        child: Text(
+                          'SIGN UP',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
                     child: TabBarView(children: [
-                  loginView(),
+                  LoginView(),
                   signUpView(),
                 ]))
               ],
@@ -64,12 +75,6 @@ class LoginPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  loginView() {
-    return const SizedBox(
-      child: Text('Login'),
     );
   }
 
